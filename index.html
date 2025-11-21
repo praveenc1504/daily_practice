@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>daily pratics</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Home page</h1>
+    <div id="loginbox">
+        <form action="welcom.html" > 
+            <label for="username">Enter the name</label>
+            <input id="username" type="text">
+            <label for="pass">Enter the pass</label>
+            <input id="pass" type="text">
+            <button id="loginbtn"type="submit">login</button>
+        </form>
+    </div>
+
+   <script>
+    const loginbtn=document.getElementById("loginbtn");
+    loginbtn.addEventListener("click",function(e){
+         e.preventDefault();
+        const name=document.getElementById("username").value;
+        const pass=document.getElementById("pass").value;
+
+        localStorage.setItem("name",name);
+        localStorage.setItem("pass",pass);
+        alert("login successful");
+        window.location.href="welcom.html";
+    })
+   </script>
+
+</body>
+</html>

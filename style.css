@@ -1,0 +1,21 @@
+
+form {
+    font-family: Arial, sans-serif;
+    display: flex;
+    font-size: large;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    margin: auto;  
+    height: 100vh;
+}
+.loginbox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+margin: auto;
+border-style: dotted;
+box-sizing: border-box;
+}
