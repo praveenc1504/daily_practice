@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>daily pratics</title>
-     <link rel="stylesheet" href="style.css">
+    <title>Daily practice</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Home page</h1>
-    <div id="loginbox">
-        <form action="welcom.html" > 
-            <label for="username">Enter the name</label>
-            <input id="username" type="text">
-            <label for="pass">Enter the pass</label>
-            <input id="pass" type="text">
-            <button id="loginbtn"type="submit">login</button>
-        </form>
-    </div>
-
-   <script>
-    const loginbtn=document.getElementById("loginbtn");
-    loginbtn.addEventListener("click",function(e){
+    <h1>Login page</h1>
+    <form action="welcome.html">
+        <label for="name">Enter name</label>
+        <input type="text" id="name">
+        <label for="pass">Enter password</label>
+        <input type="text" id="pass">
+        <button type="submit" id="loginbtn">login</button>
+         <button type="submit" id="signupbtn" >signup</button>
+    </form>
+    <script>
+        const loginbtn=document.getElementById("loginbtn");
+        loginbtn.addEventListener("click",function(e){
          e.preventDefault();
-        const name=document.getElementById("username").value;
-        const pass=document.getElementById("pass").value;
+            const Uname=document.getElementById("name").value;
+            const Upass=document.getElementById("pass").value;
+            
+            const user=JSON.parse(localStorage.getItem("user"));
 
-        localStorage.setItem("name",name);
-        localStorage.setItem("pass",pass);
-        alert("login successful");
-        window.location.href="welcom.html";
-    })
-   </script>
+            if(user.name===Uname&&user.pass===Upass)
+        {
+            alert("success");
+            window.location.href="welcome.html";
+        }
+        else{
+            alert("invalid credentials");
+        }
+        })
+        const signupbtn=document.getElementById("signupbtn");
 
+        signupbtn.addEventListener("click",function(e){
+         e.preventDefault();
+         window.location.href="signup.html";    
+        })
+    </script>
 </body>
 </html>

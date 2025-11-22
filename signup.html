@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>signup page</h1>  
+   <form action="welcome.html">
+      <label for="name">Enter name</label>
+      <input type="text"  id="name">
+      <label for="email">Enter email</label>
+      <input type="text"  id="email">
+      <label for="pass">Enter password</label>
+      <input type="text"  id="pass">
+       <button type="submit" id="signupbtn">login</button>
+   </form>
+   <script>
+    const signupbtn=document.getElementById("signupbtn");
+
+    signupbtn.addEventListener("click",function(e){
+        e.preventDefault();
+        const name=document.getElementById("name");
+        const email=document.getElementById("email");
+        const pass=document.getElementById("pass");
+        const users=JSON.parse(localStorage.getItem("user"));
+        if(users.name===name.value&&users.pass===pass.value){
+            alert("user already exist")
+           window.location.href="signup.html";
+        }
+        const user={
+            name: name.value,
+            email: email.value,
+            pass: pass.value
+        }
+        localStorage.setItem("user",JSON.stringify(user));
+      
+        alert("sign success");
+        window.location.href="index.html";
+
+
+    })
+
+   </script>
+</body>
+</html>
