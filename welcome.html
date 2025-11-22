@@ -14,18 +14,29 @@
     </div>
     <h3 style="display: flex; text-align: center; justify-content: center;">To do list display here</h3>
 
-    <div id="display">
-      
-    
-    </div>
+    <div id="display"></div>
     <script>
-     
+        function edit(i){
+             const list=JSON.parse(localStorage.getItem("todoList"));
+             const rename=prompt("Enter rename",list[i]);
+
+             list[i]=rename;
+            localStorage.setItem("todoList",JSON.stringify(list));       
+            window.location.href="welcome.html";
+
+        }
+         function dlt(i){
+            const list=JSON.parse(localStorage.getItem("todoList"));
+           list.splice(i, 1);        
+           localStorage.setItem("todoList",JSON.stringify(list));       
+            window.location.href="welcome.html";
+         }
         function display(){
              const list=JSON.parse(localStorage.getItem("todoList"))||[];
                const display=document.getElementById("display");
                if(!list)return;
              list.forEach((element,i)  => {
-                display.innerHTML+=`<div class="list"><div class=index>${i+1}</div><div class="name">${element}</div><button>edit</button><button>dlt</button></div>`
+                display.innerHTML+=`<div class="list"><div class=index>${i}</div><div class="name">${element}</div><button onClick=edit(${i})>edit</button><button onClick=dlt(${i})>dlt</button></div>`
              });
         }
         const wel=document.getElementById("welcome");

@@ -7,14 +7,17 @@
     border-radius: 10px;
 }
 #addIn,#addbtn{
-   font-size: 29px;
+   font-size: 20px;
+
 }
 #addIn{
     width: 95%;
+    padding: 10px;
 }
 #display{
     margin-top: 20px;
     padding: 10px 20px;
+    margin :90px;
     border:2px solid black;
     border-radius: 10px;
     gap: 10px;
