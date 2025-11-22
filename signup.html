@@ -27,7 +27,7 @@
         const email=document.getElementById("email");
         const pass=document.getElementById("pass");
         const users=JSON.parse(localStorage.getItem("user"));
-        if(users.name===name.value&&users.pass===pass.value){
+        if(users&&users.name===name.value&&users.pass===pass.value){
             alert("user already exist")
            window.location.href="signup.html";
         }

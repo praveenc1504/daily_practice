@@ -4,13 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome page</title>
+    <link rel="stylesheet" href="welcome.css">
 </head>
 <body>
     <h1 id="welcome"> Welcome </h1>
+    <div id="create">
+        <input type="text" id="addIn">
+        <button id="addbtn">add</button>
+    </div>
+    <h3 style="display: flex; text-align: center; justify-content: center;">To do list display here</h3>
+
+    <div id="display">
+      
+    
+    </div>
     <script>
+     
+        function display(){
+             const list=JSON.parse(localStorage.getItem("todoList"))||[];
+               const display=document.getElementById("display");
+               if(!list)return;
+             list.forEach((element,i)  => {
+                display.innerHTML+=`<div class="list"><div class=index>${i+1}</div><div class="name">${element}</div><button>edit</button><button>dlt</button></div>`
+             });
+        }
         const wel=document.getElementById("welcome");
-        const email=JSON.parse(localStorage.getItem("user")).email
-        wel.innerText=`Welcome ${email}`;
+        const name=JSON.parse(localStorage.getItem("user")).name;
+        wel.innerText=`Welcome ${name}`;
+
+        const add=document.getElementById("addbtn");
+       
+        add.addEventListener("click",function(e){
+             const task=document.getElementById("addIn");;
+          
+            const list=JSON.parse(localStorage.getItem("todoList"))||[];
+            list.push(task.value);
+            localStorage.setItem("todoList",JSON.stringify(list));
+            console.log(list);
+            console.log(task.value);
+            task.value="";
+            window.location.href="welcome.html";
+        })
+        
+        display();
+
     </script>
 </body>
 </html>

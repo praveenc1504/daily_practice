@@ -1,0 +1,41 @@
+#create{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 20px;
+   
+    border-radius: 10px;
+}
+#addIn,#addbtn{
+   font-size: 29px;
+}
+#addIn{
+    width: 95%;
+}
+#display{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border:2px solid black;
+    border-radius: 10px;
+    gap: 10px;
+    }
+.list{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px
+}
+.list .name{
+    padding: 10px;
+    text-align: center;
+    width: 90%;
+    border: 2px solid rgb(147, 140, 140);
+}
+.list button{
+    width: 5%;
+}
+.list .index{
+ background-color: rgb(207, 206, 206);
+ color: black;
+   padding: 10px;
+}
