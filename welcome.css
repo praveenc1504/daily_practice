@@ -42,3 +42,19 @@
  color: black;
    padding: 10px;
 }
+#filter{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+}
+#filter button{
+    font-size: 20px;
+}
+.list .check{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+}
